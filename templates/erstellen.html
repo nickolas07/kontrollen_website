@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="view-kontrolle-mit-title" style="text-align: center">
+        <h1>{{ name }}</h1>
+        <p class="version" style="margin-bottom: 1%">Dies sind nur Angaben und verändern nicht Aufgaben!</p>
+        <form method="post">
+            {% csrf_token %}
+            <input id="{{ identifier }}" type="hidden" name="{{ form.identifier.label }}" value="{{ identifier }}" autocomplete="off">
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        {{ form.schule }}
+                        <label for="floatingSchule">Schule / Titel</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        {{ form.schulart }}
+                        <label for="floatingSchulart">Schulart / Untertitel</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        {{ form.lehrer }}
+                        <label for="floatingLehrer">Lehrer</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        {{ form.datum }}
+                        <label for="floatingDatum">Datum</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md">
+                    <div class="form-floating mb-3">
+                        {{ form.kurs }}
+                        <label for="floatingKurs">Kurs</label>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        {{ form.kontrollen_art }}
+                        <label for="floatingArt">Kontrollen-Art</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2">
+                <div class="col-md">
+                    <button type="submit" class="btn btn-success" style="width: 11vw">Erstellen</button>
+                </div>
+                <div class="col-md">
+                    <button type="reset" class="btn btn-danger" style="width: 11vw">Eingaben löschen</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

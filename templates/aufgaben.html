@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ themenbereich }}
+{% endblock %}
+{% block content %}
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const listParent = document.querySelectorAll('.list-parent');
+            const listChild = document.querySelectorAll('.list-child');
+
+            const checkboxGroups = document.querySelectorAll('.checkbox-group');
+
+            checkboxGroups.forEach(group => {
+                const parentCheckbox = group.querySelector('.parentCheckbox');
+                const childCheckboxes = group.querySelectorAll('.childCheckbox');
+
+                // Funktion zum Aktualisieren des Status der Child-Checkboxen
+                const updateChildCheckboxes = () => {
+                    childCheckboxes.forEach(checkbox => {
+                        checkbox.checked = parentCheckbox.checked;
+                    });
+                };
+
+                // Funktion zum Aktualisieren des Status der Parent-Checkbox
+                const updateParentCheckbox = () => {
+                    if (childCheckboxes.length === 0) {
+                        parentCheckbox.indeterminate = false;
+                        parentCheckbox.checked = false;
+                        return;
+                    }
+
+                    const allChecked = Array.from(childCheckboxes).every(checkbox => checkbox.checked);
+                    const someChecked = Array.from(childCheckboxes).some(checkbox => checkbox.checked);
+                    parentCheckbox.checked = allChecked;
+                    parentCheckbox.indeterminate = !allChecked && someChecked;
+                };
+
+                // Event-Listener für die Parent-Checkbox
+                parentCheckbox.addEventListener('change', updateChildCheckboxes);
+
+                // Event-Listener für die Child-Checkboxen
+                childCheckboxes.forEach(checkbox => {
+                    checkbox.addEventListener('change', updateParentCheckbox);
+                });
+
+                // Initialer Status der Parent-Checkbox festlegen
+                updateParentCheckbox();
+                });
+
+        });
+    </script>
+
+    <div class="aufgaben-div">
+    <h1 style="margin-bottom: 2%">{{ themenbereich }}</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        <ul class="list-group list-parent">
+            {% for aufgabe in aufgaben %}
+                <li class="list-group-item checkbox-group" style="padding: 3%">
+                <div class="parent-div">
+                    <input class="form-check-input me-1 parent parentCheckbox" type="checkbox" value=""
+                           id="parent_{{forloop.counter}}"
+                           name="parent_{{forloop.counter}}">
+                    <label class="form-check-label parent"
+                           for="parent_{{forloop.counter}}">
+                      {{ aufgabe.0 }}
+                    </label>
+                </div>
+                    {% if aufgabe.1 %}
+                        <ul class="list-group list-child" style="margin-top: 2%;">
+                            {% for teilaufg in aufgabe.1 %}
+                                <li class="list-group-item">
+                                    <div class="form-check child-div">
+                                        <input class="form-check-input me-1 childCheckbox" type="checkbox" value=""
+                                               id="child_{{forloop.parentloop.counter}}_{{forloop.counter}}"
+                                               name="child_{{forloop.parentloop.counter}}_{{forloop.counter}}">
+                                        <label class="form-check-label child-label"
+                                               for="child_{{forloop.parentloop.counter}}_{{forloop.counter}}">
+                                            {{ teilaufg.1 }}
+                                        </label>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+        <input type="submit" class="btn btn-outline-secondary" value="Weiter" style="margin-top: 4%; width: 15vw;">
+    </form>
+    </div>
+{% endblock %}

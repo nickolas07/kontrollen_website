@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{ name }}{% endblock %}
+{% block content %}
+    <div class="view-kontrolle-mit-title">
+        <h1 style="margin-bottom: 0">{{ name }}</h1>
+        {% if beispiel %}
+            <div class="view-kontrolle-beispiel">
+                <a href="/kontrollen/pdf/{{ identifier }}" target="_blank" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Ansehen</a>
+                <a href="/kontrollen/pdf/{{ identifier }} - Lsg" target="_blank" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Lösung Ansehen</a>
+            </div>
+        {% else %}
+            <div class="view-kontrolle">
+                <a href="/kontrollen/pdf/{{ identifier }}" target="_blank" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Ansehen</a>
+                <a href="/kontrollen/pdf/{{ identifier }} - Lsg" target="_blank" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Lösung Ansehen</a>
+                <a href="/kontrollen/download/{{ identifier }}" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Herunterladen</a>
+                <a href="/kontrollen/download/{{ identifier }} - Lsg" class="btn btn-outline-secondary vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Lösung Herunterladen</a>
+                <a style="grid-column: 1 / span 2;" href="/suchen/delete/{{ identifier }}" class="btn btn-outline-danger vk-button link-light link-offset-2 link-underline link-underline-opacity-0">Löschen</a>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

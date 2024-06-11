@@ -1,0 +1,510 @@
+@font-face {
+    font-family: "Rubik";
+    src: url("/static/fonts/Rubik/Rubik-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Playfair Display";
+    src: url("/static/fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/static/fonts/IBM-Plex-Sans-Var/fonts/complete/woff2/IBM Plex Sans Var-Roman.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "IBM Plex Mono";
+    src: url("/static/fonts/IBM_Plex_Mono/IBMPlexMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Vollkorn";
+    src: url("/static/fonts/Vollkorn/Vollkorn-VariableFont_wght.ttf") format("truetype");
+}
+
+.rubik-400 {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.rubik-200 {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.playfair-display-400 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-sans-400 {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.vollkorn-400 {
+    font-family: "Vollkorn", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ibm-plex-mono-400 {
+    font-family: "IBM Plex Mono", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.theme-ease {
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.content {
+    margin: 2%;
+}
+
+.wrapper-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow-y: hidden;
+}
+
+.title-home {
+    font-size: 9rem;
+    max-width: 1150px;
+}
+
+.subtitle {
+    font-size: 2rem;
+    text-align: right;
+    max-width: 40%;
+}
+
+.subtitle-kontrolle {
+    font-size: 0.75rem;
+    font-weight: lighter;
+    margin-bottom: 2%;
+}
+
+
+.wrapper-kontrollen {
+    font-size: 1.3rem;
+    margin: 2% 5vw;
+}
+
+
+.kontrolle {
+    flex: 0 0 50%;
+    margin-bottom: 1%;
+    width: 50%;
+
+}
+
+.text {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.beispiel {
+    height: 25px;
+    font-size: 0.75em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.kontrolle-suchen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otp-group .otp {
+    text-transform: uppercase;
+    width: 7vw;
+    height: 7vw;
+    font-size: 4vw;
+    text-align: center;
+    line-height: 10px;
+    border-radius: 1vw;
+}
+
+.otp {
+    display: flex;
+    align-items: center;
+}
+
+#otpGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.spinner-border {
+    width: 1rem;
+    height: 1rem;
+}
+
+#submit-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 18vw;
+    height: 4.5vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+    margin-top: 4.5%;
+}
+
+
+
+
+
+.wrapper-title-finden {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.title-suchen {
+    font-size: 9rem;
+    text-align: center;
+    height: fit-content;
+}
+
+.subtitle-finden {
+    font-size: 2rem;
+    margin-bottom: 5%;
+}
+
+#otp-container {
+    display: flex;
+    width: 75%;
+    justify-content: center;
+    align-items: center;
+}
+.otp-field {
+    display: flex;
+    flex-shrink: 0;
+    width: 7vw;
+    height: 7vw;
+    font-size: 5vw;
+    text-align: center;
+    margin: 0 5px;
+    border: 2px solid #525252;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: Canvas;
+}
+
+.otp-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.otp-submit {
+    width: fit-content;
+    height: 4.5vw;
+    font-size: 2vw;
+    border-radius: 20px;
+}
+
+.not-found {
+    font-size: 4vw;
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.bb2d3b {
+    color: #bb2d3b;
+}
+
+.btn-zurück {
+    width: 18vw;
+    height: 4.5vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+}
+
+.view-kontrolle-mit-title {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 15px;
+    border: 3px solid #686868;
+    padding: 2%;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.view-kontrolle {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1vw;
+    justify-items: center;
+    align-items: center;
+    width: fit-content;
+    min-width: 80%;
+    margin: 5%;
+}
+
+.view-kontrolle-beispiel {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1vw;
+    justify-items: center;
+    align-items: center;
+    width: fit-content;
+    margin: 2%;
+}
+
+.vk-button {
+    width: 100%;
+    font-size: 1.6rem;
+}
+
+.version {
+    font-size: 0.9rem;
+    font-weight: lighter;
+    color: #9d9d9d;
+    margin-bottom: 0.5%;
+    margin-left: -1%;
+}
+.parent {
+    margin-top: 0;
+    margin-left: 1vw;
+}
+
+.child-div {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 0.85rem;
+    font-weight: 350;
+}
+
+
+.parent-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+
+.child-label {
+    padding-left: 1vw;
+    margin: auto 0;
+}
+
+.no-box {
+    padding-left: 0;
+}
+
+.aufgaben-div {
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+
+
+@media only screen  and (max-width: 600px) and (orientation: portrait) {
+    .version {
+        margin-left: -3%;
+    }
+    .title-finden {
+        font-size: 3rem;
+    }
+
+    .subtitle-finden {
+        font-size: 1.2rem;
+        margin-bottom: 4%;
+    }
+
+    .otp-wrapper {
+        justify-items: center;
+    }
+
+    .otp-field {
+        width: 6vh;
+        height: 6vh;
+        font-size: 5vw;
+    }
+
+    .otp-submit {
+        width: fit-content;
+        height: auto;
+        font-size: 5vw;
+    }
+
+    .not-found {
+        font-size: 10vw;
+        text-align: center;
+        margin-top: 10vh;
+    }
+
+    .btn-zurück {
+        width: 30vw;
+        height: 15vw;
+        font-size: 7vw;
+        border-radius: 15px;
+    }
+
+    .vk-button {
+        width: 100%;
+    }
+}
+
+@media only screen  and (max-width: 1100px) and (orientation: landscape) {
+    .version {
+        margin-left: -2%;
+    }
+    .title-finden {
+        font-size: 3rem;
+    }
+
+    .subtitle-finden {
+        font-size: 1.2rem;
+        margin-bottom: 2%;
+    }
+
+    .otp-wrapper {
+        justify-items: center;
+        gap: 7vh;
+    }
+
+    .otp-field {
+        width: 8vw;
+        height: 8vw;
+        font-size: 5vw;
+    }
+}
+@media only screen and (max-width: 600px) {
+    #otp-container {
+        display: grid;
+        grid-template-columns: repeat(4, 10vw);
+        grid-template-rows: auto auto auto;
+        justify-items: center;
+        gap: 4%;
+    }
+
+    .otp-minus {
+        grid-column: 1 / span 4;
+    }
+
+    .not-found {
+        font-size: 150px;
+        text-align: center;
+        margin-top: 15vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #otp-container {
+        gap: 10%;
+    }
+}
+
+
+@media only screen and (max-width: 600px) {
+    .kontrolle {
+        min-width: 100%;
+        text-align: center;
+        margin-bottom: 4%;
+    }
+
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .row-kontrollen {
+        justify-content: center;
+    }
+
+    .text {
+        align-items: center;
+        margin-bottom: 3%;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .wrapper-title {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 95%;
+        flex-wrap: wrap;
+        overflow-y: hidden;
+    }
+
+    .title-home {
+        font-size: 3rem;
+        max-width: fit-content;
+        text-align: center;
+    }
+
+    .subtitle {
+        margin-right: auto;
+        font-size: 1rem;
+        text-align: left;
+        max-width: fit-content;
+    }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 480px) {
+    .title-home {
+        font-size: 4rem;
+        max-width: fit-content;
+        text-align: center;
+    }
+
+    .subtitle {
+        font-size: 2rem;
+        margin-right: auto;
+        text-align: left;
+        max-width: fit-content;
+    }
+
+    .wrapper-title {
+        justify-content: flex-start;
+        align-items: center;
+        height: 95%;
+        flex-wrap: wrap;
+        overflow-y: hidden;
+    }
+}
