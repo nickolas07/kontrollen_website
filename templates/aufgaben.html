@@ -51,12 +51,12 @@
     </script>
 
     <div class="aufgaben-div">
-    <h1 style="margin-bottom: 2%">{{ themenbereich }}</h1>
-    <form method="post" action="">
+    <h1 class="aufgabe-name">{{ themenbereich }}</h1>
+    <form method="post">
         {% csrf_token %}
         <ul class="list-group list-parent">
             {% for aufgabe in aufgaben %}
-                <li class="list-group-item checkbox-group" style="padding: 3%">
+                <li class="aufgabe list-group-item checkbox-group">
                 <div class="parent-div">
                     <input class="form-check-input me-1 parent parentCheckbox" type="checkbox" value=""
                            id="parent_{{forloop.counter}}"
@@ -86,7 +86,7 @@
                 </li>
             {% endfor %}
         </ul>
-        <input type="submit" class="btn btn-outline-secondary" value="Weiter" style="margin-top: 4%; width: 15vw;">
+        <input type="submit" class="btn-weiter btn btn-outline-secondary" value="Weiter">
     </form>
     </div>
 {% endblock %}

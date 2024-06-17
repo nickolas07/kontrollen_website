@@ -1,4 +1,6 @@
 from Aufgaben.Aufgaben_Analysis import *
+from Aufgaben.Aufgaben_Algebra import *
+from Aufgaben.Aufgaben_Wahrscheinlichkeitsrechnung import *
 from skripte.erstellen import *
 
 # Angaben für den Test im pdf-Dokument
@@ -9,26 +11,27 @@ Fach = 'Mathematik'
 Klasse = '12'
 Lehrer = 'Herr Herrys'
 Art = 'Test 4 (2. Sem.)'
-Titel = 'Rechenregeln und Stammfunktionen'
+Titel = 'Baumdiagramm und Laplace Experimente'
 datum_delta = 0  # in Tagen (0 ist Heute und 1 ist Morgen, 2 Übermorgen, usw.)
 anzahl = 1 # wie viele verschiedenen Tests sollen erzeugt werden
-probe = True # True: Probe 01, 02 usw. oder Gr. A, Gr. B usw
+probe = True    # True: Probe 01, 02 usw. oder Gr. A, Gr. B usw
 
 liste_punkte = ['Punkte']
 liste_bez = ['Aufgabe']
 
 for i in range(anzahl):
-    aufgaben_seite1 = [rechenregeln_integrale(1), unbestimmtes_integral(2), bestimmtes_integral(3)]
+    aufgaben_seite1 = [begriffe_wahrscheinlichkeit(1, anzahl=2),
+                       baumdiagramm_zoZ(2, ['a', 'b', 'c'], stufen=2),
+                       faires_spiel(3)]
     for element in aufgaben_seite1:
         liste_bez.extend(element[5])
         liste_punkte.extend(element[4])
-    # print(element[0][4])
-    # print(element[2][4])
 
-#    aufgaben_seite2 = [aenderungsrate(3)]
-#    for element in aufgaben_seite2:
-#        liste_bez.extend(element[5])
-#        liste_punkte.extend(element[4])
+    aufgaben_seite2 = []
+    for element in aufgaben_seite2:
+        liste_bez.extend(element[5])
+        liste_punkte.extend(element[4])
+
     liste_seiten = [seite(aufgaben_seite1)] # z.b. liste_seiten = [seite(aufgaben_seite1), seite(aufgaben_seite2)]
 
     angaben = [schule, schulart, Kurs, Fach, Klasse, Lehrer, Art, Titel, datum_delta, liste_bez, liste_punkte]

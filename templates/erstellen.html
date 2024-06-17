@@ -6,7 +6,7 @@
         <form method="post">
             {% csrf_token %}
             <input id="{{ identifier }}" type="hidden" name="{{ form.identifier.label }}" value="{{ identifier }}" autocomplete="off">
-            <div class="row g-2">
+            <div class="row">
                 <div class="col-md">
                     <div class="form-floating mb-3">
                         {{ form.schule }}
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-2">
+            <div class="row">
                 <div class="col-md">
                     <div class="form-floating mb-3">
                         {{ form.lehrer }}
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row g-2">
+            <div class="row">
                 <div class="col-md">
                     <div class="form-floating mb-3">
                         {{ form.kurs }}
@@ -42,18 +42,18 @@
                     </div>
                 </div>
                 <div class="col-md">
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
                         {{ form.kontrollen_art }}
                         <label for="floatingArt">Kontrollen-Art</label>
                     </div>
                 </div>
             </div>
-            <div class="row g-2">
+            <div class="row">
                 <div class="col-md">
-                    <button type="submit" class="btn btn-success" style="width: 11vw">Erstellen</button>
+                    <button type="submit" class="btn-submit btn btn-success">Erstellen</button>
                 </div>
                 <div class="col-md">
-                    <button type="reset" class="btn btn-danger" style="width: 11vw">Eingaben löschen</button>
+                    <button type="reset" class="btn-reset btn btn-danger">Eingaben löschen</button>
                 </div>
             </div>
         </form>

@@ -6,10 +6,10 @@
         <div class="version">
             <strong>Version vom:</strong> 30. Mai 2024, 08:45
         </div>
-        <div class="row row-kontrollen">
+        <div class="row row-kontrollen" style="margin-left: 0">
             {% for kontrolle in Kontrollen %}
                 <ul class="kontrolle col list-group">
-                    <li class="list-group-item d-flex p-3 justify-content-between align-items-center">
+                    <li class="list-group-item kontrolle-li p-3 justify-content-between align-items-center">
                         <div class="text">
                             {{ kontrolle.name }}
                         <div class="subtitle-kontrolle">
@@ -24,7 +24,7 @@
                         </div>
                         <div class="btn-group" role="group">
                             <a type="button" class="btn btn-outline-secondary" href="probe/{{ kontrolle.identifier }}" target="_self">Probe</a>
-                            <a type="button" class="btn btn-success" href="erstellen/{{ kontrolle.identifier }}" target="_self">Erstellen</a>
+                            <a type="button" class="btn btn-outline-success" href="erstellen/{{ kontrolle.identifier }}" target="_self">Erstellen</a>
                         </div>
                     </li>
                 </ul>
