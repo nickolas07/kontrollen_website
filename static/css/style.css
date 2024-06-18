@@ -247,11 +247,12 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
-    gap: 1vw;
+    gap: 1rem;
     justify-items: center;
     align-items: center;
     width: fit-content;
-    margin: 2%;
+    min-width: 80%;
+    margin: 2rem 2rem 0.7rem 2rem;
 }
 
 .view-kontrolle {
@@ -286,6 +287,11 @@
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, 1fr);
         margin: 1rem 1rem 0.45rem 1rem;
+    }
+
+    .view-kontrolle-beispiel {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr);
     }
 
     .btn-delete {
@@ -384,8 +390,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 18vw;
-    height: 4.5vw;
+    width: 22rem;
+    height: 5.5rem;
     font-size: 2.3rem;
     border-radius: 20px;
     margin-top: 4.5%;
@@ -460,6 +466,7 @@
 .child-label {
     padding-left: 1vw;
     margin: auto 0;
+    text-align: left;
 }
 
 .btn-weiter {
